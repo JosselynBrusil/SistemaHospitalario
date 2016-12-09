@@ -45,7 +45,7 @@ public class Medico extends Persona implements Serializable{
         String receta, indicaciones,fecha;
       
         Scanner sc= new Scanner(System.in);
-//        hc.add(new HistorialClinica("noce","noce","noce"));
+//        hc.add(new HistorialClinica("8 ibuprofenos","cada 8 horas presenta malestar","9/12/16"));
 //        hm.put("1723291090", hc);
 //         leerEsc.escribirArchivo(hm, "HistoriaClinica");
         

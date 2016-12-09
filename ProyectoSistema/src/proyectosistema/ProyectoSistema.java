@@ -31,12 +31,13 @@ public class ProyectoSistema {
          List<Medico> listMed=new ArrayList();
          List<Paciente> lp=new ArrayList();
         List<Funcionario> lf=new ArrayList();
-//        lf.add(new Funcionario("FUNCIONARIO","Andres Ruiz","1723291090","mailof",val.encriptaEnMD5("mailof")));
+//        lf.add(new Funcionario("FUNCIONARIO","Francisco Cevallos","1718094525","pancho",val.encriptaEnMD5("pancho")));
 //        leerEsc.escribirArchivo(lf, "listFuncionario");
-        listMed.add(new Medico("Obste","Juan","1723291090","doc1",val.encriptaEnMD5("doc1")));
-        leerEsc.escribirArchivo(listMed, "listMedicos");
-//        lp.add(new Paciente("1723291090","Juan","Andres Ruiz","1723291090","pac1",val.encriptaEnMD5("pac1")));
+//        listMed.add(new Medico("Cardiologo","Juan","1723291090","doc1",val.encriptaEnMD5("doc1")));
+//        leerEsc.escribirArchivo(listMed, "listMedicos");
+//        lp.add(new Paciente("1723291090","Juan","Josselin Brusil","1723291090","pac1",val.encriptaEnMD5("pac1")));
 //        leerEsc.escribirArchivo(lp, "listPacientes");
+        
          Scanner sc=new Scanner(System.in);
          
 
@@ -70,8 +71,7 @@ public class ProyectoSistema {
                              case "3":fun.ingresarMedico();break;
                              default: System.out.println("Ingreso mal ERROR");
                                  System.out.println("");
-                            
-                            
+                 
                              
                          }
                          
@@ -87,11 +87,22 @@ public class ProyectoSistema {
                     System.out.println("MEDICO  "+nombre);
                     if(nombre.equals("no existe")){
                         ProyectoSistema.main(args);
-                    }else{
-                       
+                    }else{ 
+                        System.out.println("1. Ingresar nueva Historia Clinica");
+                         System.out.println("2. Ver Historia clinica del Paciente");
+                     
+                         System.out.println("Digite la opcion deseada");
                          tipo=sc.nextLine();
-                       med.crearHistoria();
-                       med.verHistoria();
+                          switch(tipo){
+                             case "1":med.crearHistoria();break;
+                             case "2":med.verHistoria();break;
+                             
+                             default: System.out.println("Ingreso mal ERROR");
+                                 System.out.println("");
+                         }
+                       
+                         
+                     
                     }
                  
                   op=0;
@@ -104,8 +115,18 @@ public class ProyectoSistema {
                      if(nombre.equals("")){
                           System.out.println("No existe");
                         ProyectoSistema.main(args);
-                    }
-                  op=1;
+                    }else{
+                          System.out.println("1. Ver Historia clinica del Paciente");
+                          tipo=sc.nextLine();
+                          switch(tipo){
+                             case "1":med.verHistoria();break;
+                             
+                             default: System.out.println("Ingreso mal ERROR");
+                                 System.out.println("");
+                         }
+                         
+                     }
+                  op=0;
                  break;
              default:
                  System.out.println("Ingrese Correctamente F P o M");

@@ -49,7 +49,7 @@ public class Validar implements Serializable {
                 for (Object listaUsuario1 : listaUsuario) {
                    
                    Persona u = (Persona) listaUsuario1;
-                    System.out.println(u.getNombre());
+                   
                     
                     if (u.getUsuario().equals(usuario) && u.getPass().equals(clave)) {
                         nombreyApellido = u.getNombre();
