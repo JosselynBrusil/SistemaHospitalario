@@ -25,6 +25,7 @@ public class ProyectoSistema {
         Validar val=new Validar();
         String tipo,user,pass,nombre="";
         Funcionario fun=new Funcionario();
+        Medico med=new Medico();
         int op=0;
          LeerEscribirArchivos leerEsc= new LeerEscribirArchivos();
          List<Medico> listMed=new ArrayList();
@@ -32,6 +33,10 @@ public class ProyectoSistema {
         List<Funcionario> lf=new ArrayList();
 //        lf.add(new Funcionario("FUNCIONARIO","Andres Ruiz","1723291090","mailof",val.encriptaEnMD5("mailof")));
 //        leerEsc.escribirArchivo(lf, "listFuncionario");
+        listMed.add(new Medico("Obste","Juan","1723291090","doc1",val.encriptaEnMD5("doc1")));
+        leerEsc.escribirArchivo(listMed, "listMedicos");
+//        lp.add(new Paciente("1723291090","Juan","Andres Ruiz","1723291090","pac1",val.encriptaEnMD5("pac1")));
+//        leerEsc.escribirArchivo(lp, "listPacientes");
          Scanner sc=new Scanner(System.in);
          
 
@@ -83,10 +88,13 @@ public class ProyectoSistema {
                     if(nombre.equals("no existe")){
                         ProyectoSistema.main(args);
                     }else{
-                        System.out.println("EXISTE");
+                       
+                         tipo=sc.nextLine();
+                       med.crearHistoria();
+                       med.verHistoria();
                     }
                  
-                  op=1;
+                  op=0;
                  break;
              case "P":
                     tipo="listPacientes";

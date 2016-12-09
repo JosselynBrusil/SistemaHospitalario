@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  * @author USRBET
  */
 public class LeerEscribirArchivos implements Serializable{
-    public void escribirArchivo(List lista, String nomArchi){
+    public void escribirArchivo(Object lista, String nomArchi){
         
         try {
             FileOutputStream fos=new FileOutputStream("src"+File.separator+"archivos"+File.separator+""+nomArchi+".lista");
@@ -43,7 +43,7 @@ public class LeerEscribirArchivos implements Serializable{
             FileInputStream fis=new FileInputStream("src"+File.separator+"archivos"
                     +File.separator+""+nombreArchivo+".lista");
             ObjectInputStream ois=new ObjectInputStream(fis);
-             o=(List)ois.readObject();
+             o=(Object)ois.readObject();
             ois.close();
               } catch (FileNotFoundException ex) {
             Logger.getLogger(LeerEscribirArchivos.class.getName()).log(Level.SEVERE, null, ex);

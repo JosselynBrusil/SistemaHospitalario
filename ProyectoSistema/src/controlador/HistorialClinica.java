@@ -46,6 +46,11 @@ public class HistorialClinica implements Serializable{
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    @Override
+    public String toString() {
+        return "HistorialClinica{" + "receta=" + receta + ", indicaciones=" + indicaciones + ", fecha=" + fecha + '}';
+    }
     
     
     
